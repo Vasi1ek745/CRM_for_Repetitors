@@ -1,13 +1,47 @@
 <div class="m-2 p-2">
-	<h1>Добавить нового ученика</h1>
-	<div>
+
+	<h4 class="m-2 p-2 border border-2  shadow-lg">Добавить нового ученика</h4>
+	
+	<div class="m-2 p-2 border border-2  shadow-lg">
 		<%= form_with model: @student do |form| %>
-			<%= form.label "Имя" %>
-			<%= form.text_field :name%>
+			<p> 
+				<%= form.label "Имя" %>
+				<%= form.text_field :name%>
+			</p>
+			<p>
+				<%= form.label "Предмет" %>
+				<%= form.select :subject, ["Математика","Физика","Математика + Физика"], class:"form-select" %>
+		    </p>
+			<p> 
+				<%= form.label "Класс" %>
+			 	<%= form.select :subject, (7..11).to_a %>
+			 </p>
+ 			<p> 
+				<%= form.label "Место" %>
+			 	<%= form.select :location, ["Дом", "Онлайн", "Выезд"] %>
+			 </p>
+			
+ 			<p> 
+				<%= form.label "Оплата в час" %>
+			 	<%= form.select :pay_by_hour, [700,800, 900,1000] %>
+			 </p>
+			<p> 
+				<%= form.label "Дополнительная информация" %>
+				<%= form.text_field :other%>	
+			</p>
+			
 			<%= form.submit %>
 		<% end %>
 
 	</div>
+<%= form_with model: @student do |form| %>
+  <%= form.select :city, [["Berlin", "BE"], ["Chicago", "CHI"], ["Madrid", "MD"]] %>
+<% end %>
 
-
+<select class="form-select" aria-label="Default select example">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
 </div>
