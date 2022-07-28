@@ -1,47 +1,35 @@
 <div class="m-2 p-2">
 
-	<h4 class="m-2 p-2 border border-2  shadow-lg">Добавить нового ученика</h4>
 	
 	<div class="m-2 p-2 border border-2  shadow-lg">
+	<h3 class="m-2 p-2 px-3 py-3 border border-2 rounded  shadow-lg fw-light">Добавить нового ученика</h3>
 		<%= form_with model: @student do |form| %>
-			<p> 
-				<%= form.label "Имя" %>
-				<%= form.text_field :name%>
-			</p>
-			<p>
-				<%= form.label "Предмет" %>
-				<%= form.select :subject, ["Математика","Физика","Математика + Физика"], class:"form-select" %>
-		    </p>
-			<p> 
-				<%= form.label "Класс" %>
-			 	<%= form.select :subject, (7..11).to_a %>
-			 </p>
- 			<p> 
-				<%= form.label "Место" %>
-			 	<%= form.select :location, ["Дом", "Онлайн", "Выезд"] %>
-			 </p>
+			<div class="input-group flex-nowrap m-2 w-75 ">
+				<%= form.label "Имя" , class:"input-group-text" %>
+				<%= form.text_field :name, class:"form-control " ,placeholder:"Имя"%>
+			</div>
+			<div class="input-group flex-nowrap m-2 w-75">
+				<%= form.label "Предмет", class:"input-group-text" %>
+				<%= form.select :subject, ["Математика","Физика","Математика + Физика"], options = {}, class:"form-select" %>
+
+				<%= form.label "Класс" , class:"input-group-text" %>
+			 	<%= form.select :subject, (7..11).to_a, options = {}, class:"form-select"  %>
+			</div>
+ 			<div class="input-group flex-nowrap m-2 w-75">
+				<%= form.label "Место", class:"input-group-text" %>
+			 	<%= form.select :location, ["Дом", "Онлайн", "Выезд"], options = {}, class:"form-select"  %>
+
+				<%= form.label "Оплата в час", class:"input-group-text" %>
+			 	<%= form.select :pay_by_hour, [700,800, 900,1000,1100], options = {}, class:"form-select"  %>
+			</div>
+			<div class="input-group flex-nowrap m-2 w-75"> 
+				<%= form.label "Дополнительная информация",class:"input-group-text" %>
+				<%= form.text_field :other , class:"form-control" ,placeholder:"Дополнительная информация"%>	
+			</div>
+			<div class="input-group flex-nowrap m-2 mt-3 "> 
+				<%= form.submit "Добавить" , class:"input-group-text p-2" %>
+			</div>
 			
- 			<p> 
-				<%= form.label "Оплата в час" %>
-			 	<%= form.select :pay_by_hour, [700,800, 900,1000] %>
-			 </p>
-			<p> 
-				<%= form.label "Дополнительная информация" %>
-				<%= form.text_field :other%>	
-			</p>
 			
-			<%= form.submit %>
 		<% end %>
 
-	</div>
-<%= form_with model: @student do |form| %>
-  <%= form.select :city, [["Berlin", "BE"], ["Chicago", "CHI"], ["Madrid", "MD"]] %>
-<% end %>
-
-<select class="form-select" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-</div>
