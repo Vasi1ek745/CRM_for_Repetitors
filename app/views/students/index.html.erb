@@ -1,24 +1,25 @@
 <div class="m-2 p-2">
-	<h1 >Список всех учеников</h1>
+	<h2 >Список всех учеников</h2>
 </div>
 
 <% @students.each do |student| %>
  <div class="m-2 p-2 border border-2">
-
- 	<div> 	 
- 	 <h3> <%= student.name %> </h3>
-	<a class="btn btn-secondary btn-sm" data-bs-toggle="collapse" href="#student-<%=student.id%>" role="button" aria-expanded="false" aria-controls="collapseExample"> Подробнее </a>
+ 	<div > 	 
+ 	 <h3 class = "input-group-text w-25"> <%= student.name %> </h3>
  	</div>
+	 <a class="input-group-text btn btn-outline-dark" data-bs-toggle="collapse" href="#student-<%=student.id%>" role="button" aria-expanded="false" aria-controls="collapseExample"> Подробнее </a>
+
  	<div class="collapse" id="student-<%=student.id%>">
- 	<div class="card card-body">
- 	 <p> <%= student.subject %></p>
- 	 <p> <%= student.location %></p>
- 	 <p> <%= student.pay_by_hour %></p>
- 	 <p> <%= student.other %></p>
- 	 <p> <%= student.class_in_school %> </p>
-
-
- 	</div>
+		 <div class="card card-body">
+		 	 <p> Предмет: <%= student.subject %></p>
+		 	 <p> Класс в школе: <%= student.class_in_school %> </p>
+		 	 <p> Место проведения: <%= student.location %></p>
+		 	 <p> Оплата за час: <%= student.pay_by_hour %></p>
+		 	 <p> Дополнительная информация: <%= student.other %></p>
+		</div>
+    </div>
+    <%= link_to "Изменить", edit_student_path(student.id), class:"input-group-text btn btn-outline-secondary" %>
+    <%= link_to "Удалить", student_path(student.id), data: {"turbo-method": :delete, "turbo-confirm":"Вы точно хотите удалить данного ученика?" }, class:"input-group-text btn btn-outline-danger" %>
  </div>
 
 
