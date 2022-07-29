@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :students
+  resources :students do
+
+    resources :lessons
+
+  end
 
   root "main_page#index"
 
