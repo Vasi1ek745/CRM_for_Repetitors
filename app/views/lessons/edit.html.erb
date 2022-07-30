@@ -1,0 +1,37 @@
+<div class="m-2 p-2">
+
+	
+	<div class="m-2 p-2 border border-2  shadow-lg">
+	<h3 class="m-2 p-2 px-3 py-3 border border-2 rounded  shadow-lg fw-light">Добавить урок</h3>
+		<%= form_with model: @lesson do |form| %>
+			<div class="input-group flex-nowrap m-2 w-75 ">
+				<%= form.label "Ученик", class:"input-group-text" %>
+			 	<%= form.select :student_id, @array_student, options = {}, class:"form-select"  %>
+			</div>
+			<div class="input-group flex-nowrap m-2 w-75 ">
+				<%= form.label "Дата и время", class:"input-group-text " %>		
+				<%= form.datetime_select :date , {}, {class:"form-select"} %>
+			</div>
+			<div class="input-group flex-nowrap m-2 w-75 ">
+				<%= form.label "Продолжительность" , class:"input-group-text" %>
+			 	<%= form.select :duration, [60,90,120], options = {}, class:"form-select"  %>
+ 			</div>
+ 			<div class="input-group flex-nowrap m-2 w-75">
+				<%= form.label "Место", class:"input-group-text" %>
+			 	<%= form.select :location, ["Дом", "Онлайн", "Выезд"], options = {}, class:"form-select"  %>
+
+				<%= form.label "Предмет", class:"input-group-text" %>
+				<%= form.select :subject, ["Математика","Физика","Математика + Физика"], options = {}, class:"form-select" %>
+			</div>
+
+			<div class="input-group flex-nowrap m-2 mt-3 "> 
+				<%= form.submit  "OK" , class:"input-group-text p-2" %>
+				
+			</div>
+			
+			
+		<% end %>
+
+	</div>
+</div>
+

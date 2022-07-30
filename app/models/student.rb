@@ -6,4 +6,6 @@ class Student < ApplicationRecord
 	validates :location, presence: true 
 	validates :pay_by_hour, presence: true 
 
+
+
 end

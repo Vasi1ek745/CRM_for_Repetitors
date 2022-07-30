@@ -1,0 +1,18 @@
+<div class="m-2 p-2 border border-2  shadow-lg">
+	<h3 class="m-2 p-2">Список всех уроков</h2>
+	<% @lessons.each do |lesson| %>
+
+	<div class="m-2 p-3 border border-2  shadow-lg">
+		<p><%= lesson.date %> </p>
+		<h4> <%= lesson.student.name %> </h4>
+		<p><%= lesson.subject %> </p>
+
+	    <%= link_to "Подробнее", lesson_path(lesson.id), class:"input-group-text btn btn-sm btn-dark" %>
+	    <%= link_to "Изменить", edit_lesson_path(lesson.id), class:"input-group-text btn btn-sm btn-dark" %>
+    	<%= link_to "Удалить", lesson_path(lesson.id), data: {"turbo-method": :delete, "turbo-confirm":"Вы точно хотите удалить данный урок?" }, class:"input-group-text btn btn-sm btn-dark" %>
+	</div>
+
+	<% end %>
+</div>
+
+
