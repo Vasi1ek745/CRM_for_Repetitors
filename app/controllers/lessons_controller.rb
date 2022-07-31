@@ -42,7 +42,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find params[:id]
       if @lesson.delete
         flash[:success] = "Урок удален"
-        redirect_to lessons_path
+        redirect_to lessons_path , status: 303
       else
         render :index
       end

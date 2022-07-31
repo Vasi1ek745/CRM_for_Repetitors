@@ -6,7 +6,7 @@
 		<%= form_with model: @student do |form| %>
 			<div class="input-group flex-nowrap m-2 w-75 ">
 				<%= form.label "Имя" , class:"input-group-text" %>
-				<%= form.text_field :name, class:"form-control " ,placeholder:"Имя"%>
+				<%= form.text_field :name, class:"form-control " ,placeholder:"Имя" , required: true, minlength:3%>
 			</div>
 			<div class="input-group flex-nowrap m-2 w-75">
 				<%= form.label "Предмет", class:"input-group-text" %>
