@@ -36,7 +36,7 @@ class StudentsController < ApplicationController
 
   def destroy
     @student = Student.find params[:id]
-    if @student.delete
+    if @student.destroy
       flash[:success] = "Ученик удален"
       redirect_to students_path , status: 303
     else
@@ -46,6 +46,6 @@ class StudentsController < ApplicationController
 
   private
   def student_params
-    params.require(:student).permit(:name, :subject, :location, :pay_by_hour, :other, :class_in_school) 
+    params.require(:student).permit(:name, :subject, :location, :pay_by_hour, :other, :class_in_school, :phone_number) 
   end
 end
