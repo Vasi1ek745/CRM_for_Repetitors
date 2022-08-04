@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_02_122318) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_04_093123) do
   create_table "lessons", force: :cascade do |t|
     t.datetime "date"
     t.integer "duration"
@@ -19,6 +19,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_02_122318) do
     t.integer "student_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pay_by_lesson"
+    t.string "pay_method"
     t.index ["student_id"], name: "index_lessons_on_student_id"
   end
 
