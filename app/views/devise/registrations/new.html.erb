@@ -1,0 +1,31 @@
+
+  <div class="m-2 p-2 border border-2  shadow-lg">
+      <h3 class="m-2 p-2 px-3 py-3 border border-2 rounded  shadow-lg fw-light">Зарегестрироваться</h3>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="input-group flex-nowrap m-2 w-75 ">
+        <%= f.label :email , class:"input-group-text ", style: "width: 17%;" %>
+        <%= f.email_field :email, class:"form-control " ,placeholder:"Email" , autofocus: true, autocomplete: "email"%>
+      </div>
+
+      <div class="input-group flex-nowrap m-2 w-75 ">
+        <%= f.label :password , class:"input-group-text", style: "width: 17%;" %>
+        <%= f.password_field :password, class:"form-control " ,autocomplete: "new-password"%>
+      </div>
+
+      <div class="input-group flex-nowrap m-2 w-75 ">
+        <%= f.label :password_confirmation , class:"input-group-text" , style: "width: 17%;"%>
+        <%= f.password_field :password_confirmation, class:"form-control " , autocomplete: "new-password"%>
+      </div>
+
+      <div class="input-group flex-nowrap m-2 mt-3 "> 
+        <%= f.submit  "Регистрация" , class:"input-group-text p-2" %>
+      </div>
+      
+      
+    <% end %>
+   <%= render "devise/shared/links" %>
+  </div>
+
+

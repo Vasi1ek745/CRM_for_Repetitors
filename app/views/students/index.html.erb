@@ -15,11 +15,12 @@
 		 	 <p> Класс в школе: <%= student.class_in_school %> </p>
 		 	 <p> Место проведения: <%= student.location %></p>
 		 	 <p> Оплата за час: <%= student.pay_by_hour %></p>
+		 	 <p> Номер телефона: <%= student.phone_number %></p>
 		 	 <p> Дополнительная информация: <%= student.other %></p>
 		</div>
     </div>
     <%= link_to "Изменить", edit_student_path(student.id), class:"input-group-text btn btn-outline-secondary" %>
-    <%= link_to "Удалить", student_path(student.id), data: {"turbo-method": :delete, "turbo-confirm":"Вы точно хотите удалить данного ученика?" }, class:"input-group-text btn btn-outline-danger" %>
+    <%= link_to "Удалить", student_path(student.id), data: {"turbo-method": :delete, "turbo-confirm":"Вы точно хотите удалить данного ученика??" }, class:"input-group-text btn btn-outline-danger" %>
  </div>
 
 

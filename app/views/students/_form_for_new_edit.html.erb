@@ -23,6 +23,10 @@
 			 	<%= form.select :pay_by_hour, [700,800, 900,1000,1100], options = {}, class:"form-select"  %>
 			</div>
 			<div class="input-group flex-nowrap m-2 w-75"> 
+				<%= form.label "Номер телефона",class:"input-group-text" %>
+				<%= form.text_field :phone_number , class:"form-control" ,placeholder:"+7......"%>	
+			</div>
+			<div class="input-group flex-nowrap m-2 w-75"> 
 				<%= form.label "Дополнительная информация",class:"input-group-text" %>
 				<%= form.text_field :other , class:"form-control" ,placeholder:"Дополнительная информация"%>	
 			</div>
