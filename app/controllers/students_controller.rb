@@ -38,7 +38,7 @@ class StudentsController < ApplicationController
     @student = Student.find params[:id]
     if @student.delete
       flash[:success] = "Ученик удален"
-      redirect_to students_path
+      redirect_to students_path , status: 303
     else
       render :edit
     end
