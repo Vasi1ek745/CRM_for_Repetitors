@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.0"
+ruby '3.1.2'
 
 
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
@@ -28,9 +28,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 gem "bootsnap", require: false
 
-gem 'capistrano', '~> 3.11'
-gem 'capistrano-rails', '~> 1.4'
-gem 'capistrano-passenger', '~> 0.2.0'
+
 
 
 group :development, :test do
@@ -41,13 +39,11 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+  gem 'capistrano', '~> 3.11'
+  gem 'capistrano-rails', '~> 1.4'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 
-  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
-
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
 end
 
 group :test do
