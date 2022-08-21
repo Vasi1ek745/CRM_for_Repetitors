@@ -16,7 +16,7 @@ set :default_env, {
     path: '/usr/local/rbenv/plugins/ruby-build/bin:/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH',
     rbenv_root: '/usr/local/rbenv'
 }
-set :rbenv_ruby_dir, '/usr/local/rbenv/versions/3.0.0'
+set :rbenv_ruby_dir, '/home/vasiliy/.rbenv/shims/ruby'
 set :rbenv_custom_path, '/usr/local/rbenv'
 
 # Load the SCM plugin appropriate to your project:
