@@ -5,7 +5,7 @@ set :application, "myapp"
 set :repo_url, "git@github.com:Vasi1ek745/CRM_for_Repetitors.git"
 
 # Deploy to the user's home directory
-set :deploy_to, "/home/vasiliy/#{fetch :application}"
+set :deploy_to, "/home/deploy/#{fetch :application}"
 
 set :rbenv_prefix, '/usr/bin/rbenv exec'
 
